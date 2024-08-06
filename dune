@@ -1,6 +1,9 @@
 (executable
  (name parsetree_viewer)
- (modes js)
  (libraries async_kernel core incr_dom incremental virtual_dom ppxlib)
+ (modes js)
+ (js_of_ocaml
+  (flags
+   (--target-env browser)))
  (preprocess
   (pps ppx_jane)))

@@ -31,6 +31,8 @@ module App = struct
     ]
   ;;
 
+  let readonly = [ Vdom.Attr.readonly; Vdom.Attr.disabled ]
+
   let parse_result_view parse_result ~f =
     let open Vdom.Node in
     let text_content, attrs =
@@ -40,7 +42,7 @@ module App = struct
         ( [%string "parsing failed: %{exn#Exn}"]
         , List.map [ Css_gen.color (`Name "red"); Css_gen.bold ] ~f:Vdom.Attr.style )
     in
-    textarea ~attrs:(attrs @ take_full_size) [ text text_content ]
+    textarea ~attrs:(attrs @ take_full_size @ readonly) [ text text_content ]
   ;;
 
   let create (model : Model.t Incr.t) ~old_model:_ ~inject =

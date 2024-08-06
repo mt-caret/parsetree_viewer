@@ -1,1 +1,6 @@
-_build
+/_opam/
+/_build/
+/.parcel-cache/
+/.yarn/
+/dist/
+/node_modules/
