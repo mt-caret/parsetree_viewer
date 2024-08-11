@@ -4,18 +4,15 @@
   "type": "module",
   "source": "index.html",
   "scripts": {
-    "build": "parcel build",
-    "build:github-pages": "parcel build --public-url /parsetree_viewer/",
-    "dev": "parcel"
+    "build": "rsbuild build",
+    "dev": "rsbuild dev",
+    "preview": "rsbuild preview"
   },
   "dependencies": {
     "modern-css-reset": "1.4.0"
   },
   "devDependencies": {
-    "@types/node": "22.2.0",
-    "constants-browserify": "1.0.0",
-    "parcel": "2.12.0",
-    "tty-browserify": "0.0.1"
+    "@rsbuild/core": "1.0.1-beta.11"
   },
   "packageManager": "yarn@4.4.0"
 }
