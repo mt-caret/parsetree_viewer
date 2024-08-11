@@ -3,8 +3,8 @@ opam-version: "2.0"
 synopsis: "Simple GUI for showing sexp representations of the parsetree"
 maintainer: ["mtakeda"]
 authors: ["mtakeda"]
-homepage: "https://github.com/mt-caret/polars-ocaml"
-bug-reports: "https://github.com/mt-caret/polars-ocaml/issues"
+homepage: "https://github.com/mt-caret/parsetree_viewer"
+bug-reports: "https://github.com/mt-caret/parsetree_viewer/issues"
 depends: [
   "dune" {>= "3.16"}
   "async_kernel"
@@ -32,4 +32,4 @@ build: [
     "@doc" {with-doc}
   ]
 ]
-dev-repo: "git+https://github.com/mt-caret/polars-ocaml.git"
+dev-repo: "git+https://github.com/mt-caret/parsetree_viewer.git"

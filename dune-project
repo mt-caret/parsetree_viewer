@@ -5,7 +5,7 @@
 (generate_opam_files true)
 
 (source
- (github mt-caret/polars-ocaml))
+ (github mt-caret/parsetree_viewer))
 
 (authors mtakeda)
 
