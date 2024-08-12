@@ -1,5 +1,4 @@
 .DEFAULT_GOAL := build
-MAKEFLAGS += --jobs=2
 
 .PHONY: clean
 clean:
