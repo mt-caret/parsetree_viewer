@@ -1,22 +1,22 @@
 .DEFAULT_GOAL := build
 MAKEFLAGS += --jobs=2
 
+.PHONY: clean
+clean:
+	opam exec -- dune clean
+
 .PHONY: build
 build:
-	opam exec -- dune build --profile=release
-	yarn build
-
-.PHONY: dev-ocaml
-dev-ocaml:
-	opam exec -- dune build --watch
-
-.PHONY: dev-parcel
-dev-parcel:
-	yarn dev
+	opam exec -- dune build --release parsetree_viewer.bc.js index.html *.css
 
 .PHONY: dev
-dev: dev-ocaml dev-parcel
+dev:
+	opam exec -- dune build -w parsetree_viewer.bc.js index.html *.css @fmt @default
 
-.PHONY: fmt
-fmt:
-	opam exec -- dune build --auto-promote @fmt
+.PHONY: serve
+serve:
+	python -m http.server -d _build/default
+
+dist: build
+	mkdir -p dist
+	cp _build/default/{parsetree_viewer.bc.js,index.html,*.css} dist/

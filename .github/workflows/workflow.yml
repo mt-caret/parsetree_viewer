@@ -12,14 +12,12 @@ jobs:
     steps:
       - name: Checkout tree
         uses: actions/checkout@v4
-      - run: corepack enable
       - name: Set-up OCaml
         uses: ocaml/setup-ocaml@v3
         with:
           ocaml-compiler: 5
           dune-cache: true
       - run: opam install . --deps-only
-      - run: yarn install --immutable
       - run: make
   lint-fmt:
     runs-on: ubuntu-latest
